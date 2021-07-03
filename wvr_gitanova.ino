@@ -13,10 +13,6 @@
 #include <gpio.h>
 
 WVR wvr;
-extern struct pin_config_t *pin_config_lut;
-// extern Button *buttons[14];
-
-Button *wifiPin;
 
 void wifiOn(void)
 {
