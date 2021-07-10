@@ -33,9 +33,9 @@ void setup() {
   wvr.wifiIsOn = get_metadata()->wifi_starts_on;
   log_i("wifi is %s", wvr.wifiIsOn ? "on" : "off");
   
-  buttons[3]->mode = FALLING;
-  buttons[3]->onPress(wifiOff);
-  buttons[3]->onRelease(wifiOn);
+  // buttons[3]->mode = FALLING;
+  // buttons[3]->onPress(wifiOff);
+  // buttons[3]->onRelease(wifiOn);
 }
 
 void loop() {
