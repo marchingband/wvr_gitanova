@@ -31,7 +31,7 @@ void setup() {
   wvr.useUsbMidi = true;
   wvr.begin();
   wvr.wifiIsOn = get_metadata()->wifi_starts_on;
-  log_i("wifi on %d", wvr.wifiIsOn);
+  log_i("wifi is %s", wvr.wifiIsOn ? "on" : "off");
   
   buttons[3]->mode = FALLING;
   buttons[3]->onPress(wifiOff);
