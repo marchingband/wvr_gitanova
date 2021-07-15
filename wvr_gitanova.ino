@@ -13,6 +13,7 @@
 #include <gpio.h>
 
 WVR wvr;
+Button *wifiPin;
 
 void wifiOn(void)
 {
@@ -32,10 +33,10 @@ void setup() {
   wvr.begin();
   wvr.wifiIsOn = get_metadata()->wifi_starts_on;
   log_i("wifi is %s", wvr.wifiIsOn ? "on" : "off");
-  
-  // buttons[3]->mode = FALLING;
-  // buttons[3]->onPress(wifiOff);
-  // buttons[3]->onRelease(wifiOn);
+  pinMode(D3, INPUT_PULLUP);
+  wifiPin = new Button(D3, FALLING, 60);
+  wifiPin->onPress(wifiOff);
+  wifiPin->onRelease(wifiOn);
 }
 
 void loop() {
